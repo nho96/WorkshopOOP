@@ -15,16 +15,16 @@ import java.util.List;
 public class Building {
 
     private String name;
-    private List<Room> roomList= new ArrayList<Room>(100);
+    List<Room> roomList = new ArrayList<Room>(100);
 
     Building(String name) {
         this.name = name;
     }
 
     public void addRoom(String name) {
-//        if (roomList.size() != 0 ) {
-           roomList.add(new Room(name));
-//        }
+
+        roomList.add(new Room(name));
+
     }
 
     public Room getRoom(String name) {
@@ -37,6 +37,18 @@ public class Building {
         }
 
         return room;
+    }
+    
+    @Override
+    public String toString() {
+        String name = "";
+        for (int i = 0; i < roomList.size(); i++) {
+            name += roomList.get(i).getName();
+            if (i != roomList.size()-1) {
+                name += ", ";
+            }
+        }
+        return name;
     }
 
     public void delRoom() {

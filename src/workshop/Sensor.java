@@ -12,24 +12,34 @@ import java.util.List;
  * @author Nicolai
  */
 public class Sensor {
+
     private List<Measurement> measureList;
     private String unit;
     private int minValue = 1;
-    private int maxValue = 10;
+    private int maxValue = 99;
     private String type;
-    
-    Sensor(String type, int minValue, int maxValue){ 
-      this.type = type;
-      this.minValue = minValue;
-      this.maxValue = maxValue;
+    private String name;
+
+    Sensor(String type, int minValue, int maxValue) {
+        this.type = type;
+        this.minValue = minValue;
+        this.maxValue = maxValue;
     }
-    
-    Sensor(String type){
+
+    Sensor(String type) {
         this.type = type;
     }
-    
-public double getSensorValue(){
-    return measureList.get(measureList.size()-1).getValue();
-}    
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getSensorValue() {
+        return measureList.get(measureList.size() - 1).getValue();
+    }
 
 }

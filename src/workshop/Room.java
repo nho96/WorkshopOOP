@@ -14,19 +14,30 @@ import java.util.List;
  */
 public class Room {
 
-    private List<Sensor> sensorList=new ArrayList<Sensor>(100);
+    private List<Sensor> sensorList = new ArrayList<Sensor>(100);
     private String name;
 
     Room(String name) {
         this.name = name;
     }
-    
-   public String getName(){
-   return name;
-}
+
+    public String getName() {
+        return name;
+    }
 
     public void addSensor(String type, int minValue, int maxValue) {
         sensorList.add(new Sensor(type, minValue, maxValue));
+    }
+
+    public String getSensors() {
+        String name = "";
+        for (int i = 0; i < sensorList.size(); i++) {
+            name += sensorList.get(i).getType();
+            if (i != sensorList.size() - 1) {
+                name += ", ";
+            }
+        }
+        return name;
     }
 
 }

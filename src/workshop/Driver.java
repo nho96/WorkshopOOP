@@ -29,7 +29,7 @@ public class Driver {
         for (int i = 0; i < buildingList.size(); i++) {
             name += buildingList.get(i).getName();
             if (i != buildingList.size()-1) {
-                name += ",";
+                name += ", ";
             }
         }
         return name;
